@@ -2,11 +2,16 @@
 const express= require('express')
 
 const app= express()
-
+const {register,login}=require("./controllers/user.controller")
 const userController= require('./controller/user.controller')
 const moviesController=require('./controller/movies.controller')
 const showsController=require('./controller/shows.controller')
 const seatController=require('./controller/seatController')
+
+
+app.post('/register',register)
+
+app.post('/login',login)
 
 app.use(express.json())
 
